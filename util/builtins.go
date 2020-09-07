@@ -17,7 +17,7 @@ func Date(blockId int, send chan Change, rec chan bool, action map[string]interf
 	run := true
 	for run {
 		send <- Change{blockId, time.Now().Format(action["format"].(string)), true}
-		//Block untill other thread will ping you
+		//Block until other thread will ping you
 		run = <-rec
 	}
 }

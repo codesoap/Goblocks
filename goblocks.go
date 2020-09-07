@@ -57,6 +57,8 @@ func main() {
 		for {
 			//Block untill some gothread has an update
 			res := <-recChannel
+			//Block until some gothread has an update
+			res := <-recChannel
 			if res.Success {
 				blocks[res.BlockId] = res.Data
 			} else {
